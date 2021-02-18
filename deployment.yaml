@@ -23,3 +23,18 @@ spec:
           limits:
             memory: 250Mi
             cpu: "0.25"
+      # # Used with ConfigMaps
+      #   volumeMounts:
+      #     - name: bots-ini 
+      #       mountPath: /usr/local/lib/python2.7/dist-packages/bots/config/bots.ini
+      #       subPath: bots.ini
+      #     - name: settings-py 
+      #       mountPath: /usr/local/lib/python2.7/dist-packages/bots/config/settings.py
+      #       subPath: settings.py
+      # volumes:
+      #   - name: bots-ini 
+      #     configMap:
+      #       name: botsini 
+      #   - name: settings-py 
+      #     configMap:
+      #       name: settingspy

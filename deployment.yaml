@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: bots-edi
-        image: shaker242/bots-edi:3.2.0.2 
+        image: shaker242/bots-edi:ocp-3.2.0 
         ports:
         - containerPort: 8080

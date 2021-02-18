@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bots
+  labels:
+    app: bots
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bots
+  template:
+    metadata:
+      labels:
+        app: bots
+    spec:
+      containers:
+      - name: bots-edi
+        image: shaker242/bots-edi:3.2.0.2 
+        ports:
+        - containerPort: 8080

@@ -1,0 +1,23 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: bots-insecure
+spec:
+  host: bots.apps.openshift.redcloud.land
+  to:
+    kind: Service
+    name: bots-service
+    weight: 100
+  port:
+    targetPort: 8080
+  wildcardPolicy: None
+status:
+  ingress:
+    - host: bots.apps.openshift.redcloud.land
+      routerName: default
+      conditions:
+        - type: Admitted
+          status: 'True'
+          lastTransitionTime: '2021-02-18T00:33:34Z'
+      wildcardPolicy: None
+      routerCanonicalHostname: apps.openshift.redcloud.land

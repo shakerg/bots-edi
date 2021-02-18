@@ -10,7 +10,7 @@
 
 This build also runs on OpenShift 4.6
 
-To Do:
-
-1. Create a volume to persist /data
-2. Create TLS route
+The deployment has optional ConfigMap entries to adjust your bots.ini and settings.py files.
+I am not including those files as templates, so pull your own from the image and customize for 
+your environment. Create your configmaps like so: \
+`oc create configmap $CM_NAME --from-file=$FILE_NAME`

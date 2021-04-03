@@ -13,8 +13,6 @@ RUN tar xf /opt/bots-3.2.0.tar
 RUN cd /bots-3.2.0 \
   && python setup.py install 
 USER root
-#RUN useradd -U -s /bin/false -u 1000710001 botman 
-#RUN chown -R botman /usr/local/lib/python2.7/dist-packages/bots 
 RUN chgrp -R 0 /usr/local/lib/python2.7/dist-packages/bots
 RUN chmod -R g=u /usr/local/lib/python2.7/dist-packages/bots
 EXPOSE 8080

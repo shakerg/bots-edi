@@ -11,13 +11,3 @@ spec:
   port:
     targetPort: 8080
   wildcardPolicy: None
-status:
-  ingress:
-    - host: bots.apps.openshift.redcloud.land
-      routerName: default
-      conditions:
-        - type: Admitted
-          status: 'True'
-          lastTransitionTime: '2021-02-18T00:33:34Z'
-      wildcardPolicy: None
-      routerCanonicalHostname: apps.openshift.redcloud.land

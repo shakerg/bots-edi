@@ -10,12 +10,9 @@ RUN pip install 'django<1.8' 'cherrypy<8.0' genshi
 # Install BOTS
 COPY bots-3.2.0.tar /opt/
 RUN tar xf /opt/bots-3.2.0.tar 
-RUN useradd -ms /bin/bash botman
 RUN cd /bots-3.2.0 \
   && python setup.py install 
-USER root
 RUN chgrp -R 0 /usr/local/lib/python2.7/dist-packages/bots
 RUN chmod -R g=u /usr/local/lib/python2.7/dist-packages/bots
 EXPOSE 8080
-USER botman
 ENTRYPOINT bots-webserver.py

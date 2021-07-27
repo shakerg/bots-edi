@@ -10,6 +10,7 @@ RUN pip install 'django<1.8' 'cherrypy<8.0' genshi
 # Install BOTS
 COPY bots-3.2.0.tar /opt/
 RUN tar xf /opt/bots-3.2.0.tar 
+RUN useradd -ms /bin/bash botman
 RUN cd /bots-3.2.0 \
   && python setup.py install 
 USER root
